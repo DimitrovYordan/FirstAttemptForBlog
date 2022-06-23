@@ -1,0 +1,102 @@
+.panel {
+    max-width: 900px;
+    margin: 0 auto;
+    background: peachpuff;
+    border-radius: 0.5em;
+    min-height: 2em;
+    padding: 2em;
+    box-shadow: 0 0 2em 0 rgba(0,0,0,0.1);
+}
+
+.cards {
+    display: flex;
+    gap: 1em;
+    position: relative;
+}
+
+.cards input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card {
+    display: block;
+    background: white;
+    box-shadow: 0 0 0.5em 0 rgba(0,0,0,0.1);
+    transition: 0.2s linear;
+    flex: 0 0 50px;
+}
+
+.card,
+.card-inner {
+    border-radius: 30px;
+}
+
+.cards input .card-inner {
+    border-radius: 6em;
+    border: 4em;
+}
+
+.cards input:checked + .card {
+    flex-grow: 1;
+    border-radius: 2.4em;
+    margin: 0 2em;
+}
+
+.cards input:checked + .card .card-cnt {
+    display: block;
+    opacity: 1;
+}
+
+.card .card-inner {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 0.5em;
+    min-height: 300px;
+    align-items: flex-end;
+    /* background-size: cover;
+    background-position: center;
+    background-image: var(--card-bgrd); */
+}
+
+.card svg {
+    width: 1em;
+    height: auto;
+}
+
+.card-icon {
+    flex: 0 0 3em;
+    width: 3em;
+    height: 3em;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.card-cnt {
+    flex: 1 0 auto;
+    padding-left: 1em;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transition-delay: 0.4s;
+    text-shadow: 0 0 0.2em rgba(0,0,0,0.9);
+}
+
+.card-cnt span {
+    display: block;
+    position: absolute;
+    bottom: 10px; left: 1;
+}
+
+.card-title {
+    font-weight: bold;
+    bottom: inherit;
+    top: -40;
+}
+
+.card:ntn-of-type(1) .card-icon { color: chartreuse };
